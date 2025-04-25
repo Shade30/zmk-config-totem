@@ -18,10 +18,32 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
-#define NAV1 1
+#define NAV  1
 #define SYM  2
 #define ADJ  3
-#define NAV2 4
+#define PTR  4
+#define WIN  5
+
+#define GCS1 &kp LG(LC(LS(N1)))
+#define GCS2 &kp LG(LC(LS(N2)))
+#define GCS3 &kp LG(LC(LS(N3)))
+#define GCS4 &kp LG(LC(LS(N4)))
+#define GCS5 &kp LG(LC(LS(N5)))
+#define GCS6 &kp LG(LC(LS(N6)))
+#define GCS7 &kp LG(LC(LS(N7)))
+#define GCS8 &kp LG(LC(LS(N8)))
+#define GCS9 &kp LG(LC(LS(N9)))
+#define GCS0 &kp LG(LC(LS(N0)))
+#define GS1  &kp LG(LS(N1))
+#define GS2  &kp LG(LS(N2))
+#define GS3  &kp LG(LS(N3))
+#define GS4  &kp LG(LS(N4))
+#define GS5  &kp LG(LS(N5))
+#define GS6  &kp LG(LS(N6))
+#define GS7  &kp LG(LS(N7))
+#define GS8  &kp LG(LS(N8))
+#define GS9  &kp LG(LS(N9))
+#define GS0  &kp LG(LS(N0))
 
 &mt {
   quick-tap-ms = <300>;
@@ -38,10 +60,10 @@
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
-            combo_nav2 {
+            combo_ptr {
                 timeout-ms = <100>;
                 key-positions = <11 12 13>;
-                bindings = <&tog NAV2>;
+                bindings = <&tog PTR>;
             };
             combo_lbkt {
                 timeout-ms = <50>;
@@ -86,7 +108,7 @@ label= "BASE"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     :     ┃
+//             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃     `     ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     '     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -96,18 +118,18 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &mt LGUI S  &mt LALT D  &mt LCTRL F &kp G           &kp H       &mt RCTRL J &mt RALT K  &mt RGUI L  &kp COLON
-    &kp GRAVE   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp SQT
-                                    &lt NAV1 TAB &mt LSHFT SPACE &lt SYM RET   &lt SYM ESC &mt RSHFT BSPC &lt NAV1 DEL
+                &kp A       &mt LGUI S  &mt LALT D  &mt LCTRL F &kp G           &kp H       &mt RCTRL J &mt RALT K  &mt RGUI L  &kp SEMI
+  &lt WIN GRAVE &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &lt WIN SQT
+                                    &lt NAV TAB &mt LSHFT SPACE &lt SYM RET   &lt SYM ESC &mt RSHFT BSPC &lt NAV DEL
                         >;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                nav1_layer {
+                nav_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "NAVI 1"                            ;
+label= "NAVI"                            ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃    KP *   ┃   KP 7    ┃   KP 8    ┃   KP 9    ┃   KP +    ┃   ┃   CAPS    ┃   HOME    ┃  PRT SC   ┃   P UP    ┃  VOL UP   ┃
@@ -166,7 +188,7 @@ label= "ADJ"                               ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃ BOOTLOAD  ┃ BT NEXT   ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃ BT NEXT   ┃ BOOTLOAD  ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃ BT PREV   ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃ BT PREV   ┃           ┃           ┃
+// ┃ SOFT OFF  ┃           ┃ BT PREV   ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃ BT PREV   ┃           ┃  SOFT OFF ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃   -//-    ┃   -//-    ┃   -//-    ┃   ┃   -//-    ┃   -//-    ┃   -//-    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -175,7 +197,7 @@ label= "ADJ"                               ;
 
                 &sys_reset  &bt BT_CLR &out OUT_TOG &none       &none           &none       &none      &out OUT_TOG &bt BT_CLR  &sys_reset 
                 &bootloader &bt BT_NXT  &none       &none       &none           &none       &none       &none       &bt BT_NXT  &bootloader  
-    &none       &none       &bt BT_PRV  &none       &none       &none           &none       &none       &none       &bt BT_PRV  &none       &none          
+    &soft_off   &none       &bt BT_PRV  &none       &none       &none           &none       &none       &none       &bt BT_PRV  &none       &soft_off          
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
@@ -183,26 +205,52 @@ label= "ADJ"                               ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                nav2_layer {
+                ptr_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "NAVI 2"                            ;
+label= "PTR"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃           ┃           ┃           ┃           ┃   ┃ MS WH UP  ┃           ┃           ┃           ┃           ┃
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃ MS WH UP  ┃           ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   -//-    ┃   -//-    ┃   -//-    ┃   -//-    ┃           ┃   ┃  MS LEFT  ┃  MS DOWN  ┃   MS UP   ┃ MS RIGHT  ┃           ┃
+//             ┃           ┃   -//-    ┃   -//-    ┃   -//-    ┃           ┃   ┃           ┃  MS LEFT  ┃   MS UP   ┃ MS RIGHT  ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃ MS WH DN  ┃           ┃           ┃           ┃           ┃           ┃
+// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃ MS WH DN  ┃  MS DOWN  ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃   -//-    ┃   -//-    ┃   -//-    ┃   ┃ LEFT CLK  ┃ MIDL CLK  ┃ RIGHT CLK ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &trans      &trans      &trans      &trans      &trans          &msc SCRL_UP &trans     &trans      &trans      &none
-                &trans      &trans      &trans      &trans      &trans          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-    &trans      &trans      &trans      &trans      &trans      &trans          &msc SCRL_DOWN &trans   &trans      &trans      &trans      &trans       
+                &none       &none       &none       &none       &none           &none     &msc SCRL_UP  &none      &none      &none
+                &none       &trans      &trans      &trans      &none           &none   &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &none
+    &none       &none       &none       &none       &none       &none           &none   &msc SCRL_DOWN &mmv MOVE_DOWN &none      &none      &none       
                                         &trans      &trans      &trans          &mkp MB1    &mkp MB3    &mkp MB2    
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                win_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "WIN"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃  G C S 1  ┃  G C S 2  ┃  G C S 3  ┃  G C S 4  ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃   G S 1   ┃   G S 2   ┃   G S 3   ┃   G S 4   ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃   GUI `   ┃   GUI 1   ┃   GUI 2   ┃   GUI 3   ┃   GUI 4   ┃   GUI 5   ┃   ┃   GUI 6   ┃   GUI 7   ┃   GUI 8   ┃  GUI 9    ┃  GUI 0    ┃   GUI `   ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃   -//-    ┃   -//-    ┃   -//-    ┃   ┃   -//-    ┃   -//-    ┃   -//-    ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &kp GCS1    &kp GCS2    &kp GCS3    &kp GCS4    &none           &none       &none       &none       &none       &none
+                &kp GS1     &kp GS1     &kp GS1     &kp GS1     &none           &none       &none       &none       &none       &none
+  &kp LG(GRAVE) &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)      &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &kp LG(GRAVE)       
+                                        &trans      &trans      &trans          &trans      &trans      &trans    
                         >;
                 };
         };
