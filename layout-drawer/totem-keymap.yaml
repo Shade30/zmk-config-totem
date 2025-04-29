@@ -1,0 +1,79 @@
+layout: {zmk_keyboard: totem}
+layers:
+  BASE:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [A, {t: S, h: LGUI}, {t: D, h: LALT}, {t: F, h: LCTRL}, G, H, {t: J, h: RCTRL}, {t: K, h: RALT}, {t: L, h: RGUI}, ;]
+    - [{t: '`', h: WIN}, Z, X, C, V, B, N, M, ',', ., /, {t: '''', h: WIN}]
+    - {t: TAB, h: NAVI}
+    - {t: SPACE, h: LSHFT}
+    - {t: SPACE, h: SYM}
+    - {t: SPACE, h: SYM}
+    - {t: BSPC, h: RSHFT}
+    - {t: DEL, h: NAVI}
+  NAVI:
+    - [KP MULTIPLY, KP 7, KP 8, KP 9, KP PLUS, CAPS, HOME, PSCRN, PG UP, '']
+    - [KP DIVIDE, KP 4, KP 5, KP 6, KP MINUS, LEFT, DOWN, UP, RIGHT, INSERT]
+    - [KP NLCK, KP 0, KP 1, KP 2, KP 3, KP DOT, SLCK, END, PAUSE BREAK, PG DN, '', {t: ▽, type: trans}]
+    - {t: ▽, type: held}
+    - {t: ▽, type: trans}
+    - ADJ
+    - ADJ
+    - {t: ▽, type: trans}
+    - {t: ▽, type: held alternate}
+  SYM:
+    - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
+    - ['!', '@', '#', $, '%', ^, '&', '*', (, )]
+    - ['=', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
+    - ADJ
+    - {t: ▽, type: trans}
+    - {t: RET, type: held}
+    - {t: ESC, type: held alternate}
+    - {t: ▽, type: trans}
+    - ADJ
+  ADJ:
+    - ['&sys_reset', BT CLR, OUT TOG, '', '', '', '', OUT TOG, BT CLR, '&sys_reset']
+    - ['&bootloader', BT NXT, '', '', '', '', '', '', BT NXT, '&bootloader']
+    - ['&soft_off', '', BT PRV, '', '', '', '', '', '', BT PRV, '', '&soft_off']
+    - {t: ▽, type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: held}
+    - {t: ▽, type: held alternate}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: held alternate}
+  PTR:
+    - ['', '', '', '', '', '', '&msc SCRL_UP', '', '', '']
+    - ['', {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, '', '', '&mmv MOVE_LEFT', '&mmv MOVE_UP', '&mmv MOVE_RIGHT', '']
+    - ['', '', '', '', '', '', '', '&msc SCRL_DOWN', '&mmv MOVE_DOWN', '', '', '']
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '&mkp MB1'
+    - '&mkp MB3'
+    - '&mkp MB2'
+  WIN:
+    - [Gui+Ctl+Sft+1, Gui+Ctl+Sft+2, Gui+Ctl+Sft+3, Gui+Ctl+Sft+4, '', '', '', '', MUTE, VOL UP]
+    - [Gui+Sft+1, Gui+Sft+2, Gui+Sft+3, Gui+Sft+4, '', '', '', '', '', VOL DN]
+    - [{t: Gui+`, type: held}, Gui+1, Gui+2, Gui+3, Gui+4, Gui+5, Gui+6, Gui+7, Gui+8, Gui+9, Gui+0, {t: Gui+`, type: held alternate}]
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+combos:
+  - {p: [0, 1], k: ESC}
+  - {p: [24, 25], k: RET}
+  - {p: [11, 12, 13], k: {t: PTR, h: toggle}}
+  - {p: [16, 17, 18], k: {t: PTR, h: toggle}}
+  - {p: [7, 8], k: '[', l: [BASE]}
+  - {p: [8, 9], k: ']', l: [BASE]}
+  - {p: [29, 30], k: \, l: [BASE]}
+  - {p: [7, 8], k: F11, l: [SYM]}
+  - {p: [8, 9], k: F12, l: [SYM]}
+draw_config:
+  svg_extra_style: |
+    .held.alternate {
+      fill: #c77;
+      stroke-width: .5;
+      stroke: black;
+    }
