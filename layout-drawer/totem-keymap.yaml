@@ -61,8 +61,10 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
-  - {p: [0, 1], k: ESC}
-  - {p: [24, 25], k: RET}
+  - {p: [2, 3], k: ESC}
+  - {p: [6, 7], k: ESC}
+  - {p: [21, 22], k: RET}
+  - {p: [25, 26], k: RET}
   - {p: [11, 12, 13], k: {t: PTR, h: toggle}}
   - {p: [16, 17, 18], k: {t: PTR, h: toggle}}
   - {p: [7, 8], k: '[', l: [BASE]}
